@@ -37,7 +37,15 @@ public class Main extends Entry {
             } else if (entryInput == 2) {
                 // Remove an entry
 
+//                Entry[] listOfEntries = newAddy.viewAll();
+//
+//                for (int i = 1; i < listOfEntries.length + 1; i++) {
+//                    System.out.println(listOfEntries[i].toString());
+//                }
+//
+                System.out.println("Please select the entry number you would like to remove.");
                 newAddy.delete(sc.nextInt());
+
 
             } else if (entryInput == 3) {
                 // Search for an entry
