@@ -1,90 +1,39 @@
 package com.tts;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
-//
-//public class AddressBook extends Entry {
-//    private String fName;
-//    private String lName;
-//    private String email;
-//    private String phoneNum;
-//
-//
-//
-//
-//    Scanner sc = new Scanner(System.in);
-//
-//    int entryInput;
-//    AddressBook example = new AddressBook();
-//    List<String> values = new ArrayList<>();
-//
-//
-//
-//    public void myAddressClass() {
-//
-//
-//        do {
-//
-//            if (entryInput == 1) {
-//                System.out.println("\"Please enter your first, last name, phone number and email. Press enter after each input.\"");
-//                fName = sc.nextLine();
-//                lName = sc.nextLine();
-//                email = sc.nextLine();
-//                phoneNum = sc.nextLine();
-//                example.addEntry(fName, lName, email, phoneNum);
-//
-//
-//            } else if (entryInput == 2) {
-//
-//
-//            } else if (entryInput == 3) {
-//
-//            } else if (entryInput == 4) {
-//
-//            } else if (entryInput == 5) {
-//
-//            } else {
-//                System.out.println("Invalid entry!!");
-//            }
-//
-//        }
-//        while (entryInput != 6);
-//        System.out.println("Good Bye!");
-//    }
-//
-//    private void Entry(String fName, String lName, String email, String phoneNum) {
-//    }
-//
-//
-//}
+public class AddressBook {
+    //The diamond operators "<" and ">" specify which type of Objects the List will hold
+    private List<Entry> listOfEntries;
 
+    public AddressBook() {
+        //initialize list of entries
+        this.listOfEntries = new ArrayList<>();
+    }
 
-public class AddressBook extends Entry {
-    private String fName;
-    private String lName;
-    private String email;
-    private String phoneNum;
-    Scanner sc = new Scanner(System.in);
-    int entryInput;
-    AddressBook values = new AddressBook();
-    //    List<String> values = new ArrayList<>();
-    public void myAddressClass() {
-        do {
-            if (entryInput == 1) {
-                System.out.println("\"Please enter your first, last name, phone number and email. Press enter after each input.\"");
-                fName = sc.nextLine();
-                lName = sc.nextLine();
-                email = sc.nextLine();
-                phoneNum = sc.nextLine();
-                values.addEntry(fName, lName, email, phoneNum);
-            } else if (entryInput == 2) {
-            } else if (entryInput == 3) {
-            } else if (entryInput == 4) {
-            } else if (entryInput == 5) {
-            } else {
-                System.out.println("Invalid entry!!");
-            }
-        }
-        while (entryInput != 6);
-        System.out.println("Good Bye!");
+    public void add(Entry addressBookEntry) {
+        //List.add adds a new Object to a List
+        this.listOfEntries.add(addressBookEntry);
+    }
+
+    public void delete(int index) {
+        //List.remove(int index) removes a object at the given index
+        this.listOfEntries.remove(index);
+    }
+
+    public Entry get(int index) {
+        //List.get(int index) returns the object at the given index
+        return this.listOfEntries.get(index);
+    }
+
+    public Entry[] viewAll() {
+        //create a new array with the size of our list
+        Entry[] result = new Entry[this.listOfEntries.size()];
+
+        //List.toArray(Arr[] array) fills our array with data from the list
+        this.listOfEntries.toArray(result);
+
+        //return the filled array
+        return result;
     }
 }

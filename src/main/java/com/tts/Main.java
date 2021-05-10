@@ -67,14 +67,12 @@ import java.util.*;
 
 public class Main extends Entry {
     public static int entryInput;
-    private static String fName;
-    private static String lName;
-    private static String email;
-    private static String phoneNum;
-    private static ArrayList<String> newBook = new ArrayList<>();
+
+
     public static void main(String[] args) {
+        AddressBook newAddy = new AddressBook();
         Scanner sc = new Scanner(System.in).useDelimiter("\n");
-//
+
         do {
             System.out.println("1) Add an entry\n" +
                     "2) Remove an entry\n" +
@@ -85,20 +83,31 @@ public class Main extends Entry {
                     "Please choose what you'd like to do with the database:\n");
             entryInput = sc.nextInt();
             if (entryInput == 1) {
+                Entry newEntry = new Entry();
+
                 System.out.println("Enter first name: ");
-                fName = sc.next();
+                newEntry.setfName(sc.next());
                 System.out.println("Enter last name: ");
-                lName = sc.next();
+                newEntry.setlName(sc.next());
                 System.out.println("Enter email: ");
-                email = sc.next();
+                newEntry.setEmail(sc.next());
                 System.out.println("Enter phone number: ");
-                phoneNum = sc.next();
+                newEntry.setPhoneNum(sc.next());
+                newAddy.add(newEntry);
                 System.out.println("Added entry!");
 
+
             } else if (entryInput == 2) {
-                System.out.println("2");
+                newAddy.delete(sc.nextInt());
+                break;
             } else if (entryInput == 3) {
-                System.out.println("3");
+                Entry[] listOfEntries = newAddy.viewAll();
+
+                for (int i = 0; i < listOfEntries.length; i++) {
+                    System.out.println(listOfEntries[i].toString());
+                }
+
+                break;
             } else if (entryInput == 4) {
                 System.out.println("4");
             } else if (entryInput == 5) {
