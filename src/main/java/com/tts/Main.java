@@ -1,73 +1,9 @@
 package com.tts;
-import com.tts.AddressBook;
 
 
 import java.util.*;
-
-
-//public class Main {
-//    public static int entryInput;
-//    public static String e;
-//
-//
-//    Scanner sc = new Scanner(System.in);
-//
-//    private static String fName;
-//    private static String lName;
-//    private static String email;
-//    private static String phoneNum;
-//
-//    private static ArrayList<String> test = new ArrayList<>();
-//    public static void main(String[] args) {
-//        Scanner sc = new Scanner(System.in);
-//        System.out.println("1) Add an entry\n" +
-//                "2) Remove an entry\n" +
-//                "3) Search for a specific entry\n" +
-//                "4) Print Address Book\n" +
-//                "5) Delete Book\n" +
-//                "6) Quit\n" +
-//                "Please choose what you'd like to do with the database:\n");
-//        entryInput = sc.nextInt();
-////        myAddressClass(entryInput);
-//        do {
-//
-//            if (entryInput == 1) {
-//                System.out.println("\"Please enter your first, last name, phone number and email. Press enter after each input.\"");
-//                fName = sc.nextLine();
-//                lName = sc.nextLine();
-//                email = sc.nextLine();
-//                phoneNum = sc.nextLine();
-//                test.add(fName, lName, email, phoneNum);
-//
-//
-//            } else if (entryInput == 2) {
-//
-//
-//            } else if (entryInput == 3) {
-//
-//            } else if (entryInput == 4) {
-//
-//            } else if (entryInput == 5) {
-//
-//            } else {
-//                System.out.println("Invalid entry!!");
-//            }
-//
-//        }
-//        while (entryInput != 6);
-//        System.out.println("Good Bye!");
-//
-//    }
-//
-//
-//
-//}
-
-
-
 public class Main extends Entry {
     public static int entryInput;
-
 
     public static void main(String[] args) {
         AddressBook newAddy = new AddressBook();
@@ -109,18 +45,22 @@ public class Main extends Entry {
 
             } else if (entryInput == 4) {
                 // Printing the address book
-
+                System.out.println(newAddy.toString());
+                if (newAddy != null){
                 Entry[] listOfEntries = newAddy.viewAll();
 
                 for (int i = 0; i < listOfEntries.length; i++) {
                     System.out.println(listOfEntries[i].toString());
-                }
+                }}
+                else
+                    System.out.println("Address book is empty!");
+
             } else if (entryInput == 5) {
                 //Deleting the address book
 
                 newAddy = null;
                 System.out.println("Address book has been successfully cleared.");
-
+                System.out.println(newAddy);
             } else if(entryInput > 6 | entryInput < 1){
                 System.out.println("Invalid response, please try again.");
             }
