@@ -16,14 +16,23 @@ public class AddressBook {
         this.listOfEntries.add(addressBookEntry);
     }
 
-    public void delete(int index) {
+    public void delete(String email) {
         //List.remove(int index) removes a object at the given index
-        this.listOfEntries.remove(index);
+        listOfEntries.removeIf(e->e.getEmail().equals(email));
+    }
+
+    public void look(String email) {
+        //List.get(int index) returns the object at the given index
+        this.listOfEntries.stream().filter(e->e.getEmail().equals(email)).forEach(System.out::println);
     }
 
     public Entry get(int index) {
         //List.get(int index) returns the object at the given index
         return this.listOfEntries.get(index);
+    }
+
+    public void deleteAll(){
+        this.listOfEntries.removeAll(listOfEntries);
     }
 
     public Entry[] viewAll() {
