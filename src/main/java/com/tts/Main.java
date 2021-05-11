@@ -1,8 +1,8 @@
 package com.tts;
-
-
 import java.util.*;
-public class Main extends Entry {
+
+
+public class Main  {
     public static int entryInput;
 
     public static void main(String[] args) {
@@ -61,13 +61,14 @@ public class Main extends Entry {
 
             } else if (entryInput == 4) {
                 // Printing the address book
-//                System.out.println(newAddy.toString());
+
                 if (newAddy != null){
                     Entry[] listOfEntries = newAddy.viewAll();
 
                     for (int i = 0; i < listOfEntries.length; i++) {
                         System.out.println(listOfEntries[i].toString());
-                    }}
+                    }
+                       }
                 else
                     System.out.println("Address book is empty!");
 

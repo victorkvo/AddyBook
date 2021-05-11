@@ -8,13 +8,18 @@ public class Entry {
     private String phoneNum;
 
 
-    public Entry(String fName, String lName, String email, String phoneNum){
+  Entry(String fName, String lName, String email, String phoneNum){
         this.fName = fName;
         this.lName = lName;
         this.email = email;
         this.phoneNum = phoneNum;
     }
-    public Entry() {}
+    public Entry() {
+        this.fName = "";
+        this.lName = "";
+        this.email = "";
+        this.phoneNum = "";
+    }
 
 
 
